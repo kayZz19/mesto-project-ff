@@ -6,6 +6,7 @@
 
 // @todo: Функция удаления карточки
 
+
 // @todo: Вывести карточки на страницу
 
 function createCard(cardData, deleteCallback) {
