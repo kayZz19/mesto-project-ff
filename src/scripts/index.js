@@ -4,9 +4,7 @@ import { initialCards } from "./cards.js";
 import { createCard } from "./card.js";
 import { openPopup, closePopup } from "./modal.js";
 
-function deleteCard(cardElement) {
-  cardElement.remove();
-}
+import { deleteCard } from "./card.js";
 
 function toggleLike(likeButton) {
   likeButton.classList.toggle("card__like-button_is-active");
@@ -14,12 +12,12 @@ function toggleLike(likeButton) {
 
 const popupImage = document.querySelector(".popup_type_image");
 const popupImageElement = popupImage.querySelector(".popup__image");
-const popupCaption = popupImage.querySelector(".popup__caption");
+const popupImageCaption = popupImage.querySelector(".popup__caption");
 
 function openImagePopup(cardData) {
   popupImageElement.src = cardData.link;
   popupImageElement.alt = cardData.name;
-  popupCaption.textContent = cardData.name;
+  popupImageCaption.textContent = cardData.name;
   openPopup(popupImage);
 }
 
@@ -62,18 +60,21 @@ document.querySelectorAll(".popup").forEach((popup) => {
 const profileName = document.querySelector(".profile__title");
 const profileDescription = document.querySelector(".profile__description");
 
-const formElement = popupEdit.querySelector(".popup__form");
-const nameInput = formElement.querySelector(".popup__input_type_name");
-const jobInput = formElement.querySelector(".popup__input_type_description");
+const formEditProfile = popupEdit.querySelector(".popup__form");
 
-function handleFormSubmit(evt) {
+const nameInput = formEditProfile.querySelector(".popup__input_type_name");
+const jobInput = formEditProfile.querySelector(
+  ".popup__input_type_description"
+);
+
+function handleProfileFormSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
   profileDescription.textContent = jobInput.value;
   closePopup(popupEdit);
 }
 
-formElement.addEventListener("submit", handleFormSubmit);
+formEditProfile.addEventListener("submit", handleProfileFormSubmit);
 
 const formAddCard = popupAdd.querySelector(".popup__form");
 const placeNameInput = formAddCard.querySelector(
