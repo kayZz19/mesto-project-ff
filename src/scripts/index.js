@@ -6,9 +6,7 @@ import { openPopup, closePopup } from "./modal.js";
 
 import { deleteCard } from "./card.js";
 
-function toggleLike(likeButton) {
-  likeButton.classList.toggle("card__like-button_is-active");
-}
+import { toggleLike } from "./card.js";
 
 const popupImage = document.querySelector(".popup_type_image");
 const popupImageElement = popupImage.querySelector(".popup__image");

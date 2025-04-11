@@ -25,3 +25,7 @@ export function createCard(
 export function deleteCard(cardElement) {
   cardElement.remove();
 }
+
+export function toggleLike(likeButton) {
+  likeButton.classList.toggle("card__like-button_is-active");
+}
