@@ -9,6 +9,14 @@
   padding: 34px 36px;
 }
 
+.popup__content:has(.delete-button) {
+  min-height: auto;
+}
+
+.popup__content:has(.popup__avatar) {
+  min-height: auto;
+}
+
 @media screen and (max-width: 568px) {
   .popup__content {
     width: 100%;
