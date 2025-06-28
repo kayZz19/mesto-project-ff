@@ -1,5 +1,5 @@
-const baseAddres = "https://nomoreparties.co/v1/wff-cohort-37";
-const authoKey = "cd577665-1bd9-446d-9ddf-d75b43f4e864";
+const baseAddres = "https://nomoreparties.co/v1/wff-cohort-41";
+const authoKey = "af3e3c0a-447b-4e8b-ab89-7c6f0641c402";
 
 const servCheck = (res) => {
   if (res.ok) {
