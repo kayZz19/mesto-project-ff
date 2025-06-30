@@ -8,18 +8,18 @@ const servCheck = (res) => {
   return Promise.reject(`Ошибка: ${res.status}`);
 };
 
-export function toggleLike(cardId, method) {
+export function toggleLike(cardId, isLiked) {
+  const method = isLiked ? "PUT" : "DELETE";
   return fetch(`${baseAddres}/cards/likes/${cardId}`, {
-    method: method,
+    method,
     headers: {
       authorization: authoKey,
     },
   }).then(servCheck);
 }
 
-export function deleteCard(currentCardId, currentCardElement) {
-  if (!currentCardId || !currentCardElement) return;
-  return fetch(`${baseAddres}/cards/${currentCardId}`, {
+export function deleteCard(cardId) {
+  return fetch(`${baseAddres}/cards/${cardId}`, {
     method: "DELETE",
     headers: { authorization: authoKey },
   }).then(servCheck);
